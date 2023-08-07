@@ -14,6 +14,7 @@ RUN apt-get update && \
     telnet \
     git \
     gcc \
+    iproute2 \
     g++ \
     cmake \
     autoconf \
@@ -32,3 +33,9 @@ RUN git clone --recursive -b v3.3.0 -j `nproc` https://github.com/free5gc/free5g
 
 WORKDIR /free5gc
 RUN make nrf
+
+# COPY from host to docker container in /free5gc
+COPY start_nrf.sh .
+# Save the script and make it executable:
+RUN chmod +x start_nrf.sh
+ENTRYPOINT ["./start_nrf.sh"]
