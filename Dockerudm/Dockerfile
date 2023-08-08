@@ -13,6 +13,7 @@ RUN apt-get update && \
     iputils-ping \
     telnet \
     net-tools \
+    iproute2 \
     gcc \
     g++ \
     cmake \
@@ -31,3 +32,9 @@ RUN git clone --recursive -b v3.3.0 -j `nproc` https://github.com/free5gc/free5g
 
 WORKDIR /free5gc
 RUN make udm
+
+# COPY from host to docker container in /free5gc
+COPY start_udm.sh .
+# Save the script and make it executable:
+RUN chmod +x start_udm.sh
+ENTRYPOINT ["./start_udm.sh"]

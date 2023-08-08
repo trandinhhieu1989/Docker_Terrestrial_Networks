@@ -1,4 +1,4 @@
-#  GNU nano 6.2                               Dockerfile *                                      
+#  GNU nano 6.2                               Dockerfile *                                  
 # Use the official Ubuntu 20.04 base image
 FROM ubuntu:22.04
 # SHELL ["/bin/bash", "-c"]
@@ -8,12 +8,13 @@ RUN apt-get update && \
     software-properties-common \
     curl \
     wget \
-    git \
-    gcc \
     vim \
+    net-tools \
     iputils-ping \
     telnet \
-    net-tools \
+    git \
+    gcc \
+    iproute2 \
     g++ \
     cmake \
     autoconf \
@@ -27,7 +28,13 @@ RUN apt-get update && \
     && export PATH=$PATH:/usr/lib/go/bin:$GOPATH/bin
 
 # Install free5gc
-RUN git clone --recursive -b v3.3.0 -j `nproc` https://github.com/free5gc/free5gc.git
+RUN git clone --recursive -b v3.3.0 -j `nproc` https://github.com/free5gc/free5gc.git 
 
 WORKDIR /free5gc
 RUN make amf
+
+# COPY from host to docker container in /free5gc
+COPY start_amf.sh .
+# Save the script and make it executable:
+RUN chmod +x start_amf.sh
+ENTRYPOINT ["./start_amf.sh"]

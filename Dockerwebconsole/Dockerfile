@@ -9,6 +9,7 @@ RUN apt-get update && \
     curl \
     wget \
     git \
+    iproute2 \
     gcc \
     vim \
     iputils-ping \
@@ -44,3 +45,10 @@ RUN apt-get install -y nodejs yarn
 
 WORKDIR /free5gc
 RUN make webconsole
+
+WORKDIR /free5gc/webconsole
+# COPY from host to docker container in /free5gc
+COPY start_webconsole.sh .
+# Save the script and make it executable:
+RUN chmod +x start_webconsole.sh
+ENTRYPOINT ["./start_webconsole.sh"]

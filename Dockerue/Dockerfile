@@ -36,8 +36,8 @@ RUN git clone https://github.com/aligungr/UERANSIM
 WORKDIR /UERANSIM
 RUN make
 
-#CMD echo build/nr-ue -c config/free5gc-ue.yaml; echo ping -I uesimtun0 google.com
-COPY wrapper.sh wrapper.sh
-#RUN wrapper.sh
-RUN chmod +x wrapper.sh
-#CMD ./wrapper.sh
+# COPY from host to docker container in /ueransim
+COPY start_ue.sh .
+# Save the script and make it executable:
+RUN chmod +x start_ue.sh
+ENTRYPOINT ["./start_ue.sh"]

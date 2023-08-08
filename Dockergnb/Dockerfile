@@ -35,3 +35,9 @@ RUN git clone https://github.com/aligungr/UERANSIM
 
 WORKDIR /UERANSIM
 RUN make
+
+# COPY from host to docker container in /ueransim
+COPY start_gnb.sh .
+# Save the script and make it executable:
+RUN chmod +x start_gnb.sh
+ENTRYPOINT ["./start_gnb.sh"]

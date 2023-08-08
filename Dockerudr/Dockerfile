@@ -10,7 +10,10 @@ RUN apt-get update && \
     wget \
     git \
     vim \
+    iputils-ping \
+    telnet \
     net-tools \
+    iproute2 \
     gcc \
     g++ \
     cmake \
@@ -29,3 +32,9 @@ RUN git clone --recursive -b v3.3.0 -j `nproc` https://github.com/free5gc/free5g
 
 WORKDIR /free5gc
 RUN make udr
+
+# COPY from host to docker container in /free5gc
+COPY start_udr.sh .
+# Save the script and make it executable:
+RUN chmod +x start_udr.sh
+ENTRYPOINT ["./start_udr.sh"]
