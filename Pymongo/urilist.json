@@ -1,0 +1,8 @@
+{"_id":{"$oid":"64dfde4f8f5ecaf84fa81b0b"},"nfType":"AMF","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/4610c783-ccc9-46db-bc04-7f801cf6dd51"}]}}
+{"_id":{"$oid":"64dfde508f5ecaf84fa81b0d"},"nfType":"SMF","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/a12ad9f0-981d-43fa-acce-a51c1d2a8244"}]}}
+{"_id":{"$oid":"64dfde518f5ecaf84fa81b0f"},"nfType":"AUSF","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/a65489c3-851c-463d-bfec-52e580e101e0"}]}}
+{"_id":{"$oid":"64dfde528f5ecaf84fa81b11"},"nfType":"NSSF","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/2a881a2b-c362-4dff-9067-fd275d810d1d"}]}}
+{"_id":{"$oid":"64dfde528f5ecaf84fa81b13"},"nfType":"PCF","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/f087d9cb-13a1-4af5-8b34-180661497acd"}]}}
+{"_id":{"$oid":"64dfde528f5ecaf84fa81b15"},"nfType":"UDM","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/c0326e74-2075-4ff8-b79d-f5e721ffcde1"}]}}
+{"_id":{"$oid":"64dfde538f5ecaf84fa81b17"},"nfType":"UDR","_link":{"item":[{"href":"http://172.18.0.3:8000/nnrf-nfm/v1/nf-instances/efd95e95-7556-4a6d-8dfa-36cc3eece33b"}]}}
+
