@@ -38,6 +38,7 @@ RUN make
 
 # COPY from host to docker container in /ueransim
 COPY start_ue.sh .
+COPY free5gc-ue.yaml  config/
 # Save the script and make it executable:
 RUN chmod +x start_ue.sh
 ENTRYPOINT ["./start_ue.sh"]

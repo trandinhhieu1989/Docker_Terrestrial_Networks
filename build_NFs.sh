@@ -15,3 +15,5 @@ docker build -t "udr:1.0.0" -f "./Dockerudr/Dockerfile" "./Dockerudr/"
 docker build -t "webconsole:1.0.0" -f "./Dockerwebconsole/Dockerfile" "./Dockerwebconsole/"
 docker build -t "gnb:1.0.0" -f "./Dockergnb/Dockerfile" "./Dockergnb/"
 docker build -t "ue:1.0.0" -f "./Dockerue/Dockerfile" "./Dockerue/"
+# for new UE
+# docker build -t "ue:1.0.1" -f "./Dockerue1/Dockerfile" "./Dockerue1/"

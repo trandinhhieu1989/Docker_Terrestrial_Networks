@@ -1,0 +1,3 @@
+{"_id":{"$oid":"64eb573b9b9e51ddc1211a5a"},"gpsis":["msisdn-"],"subscribedUeAmbr":{"uplink":"1 Gbps","downlink":"2 Gbps"},"nssai":{"defaultSingleNssais":[{"sst":1.0,"sd":"010203"},{"sst":1.0,"sd":"112233"}]},"ueId":"imsi-208930000000001","servingPlmnId":"20893"}
+{"_id":{"$oid":"64eb57449b9e51ddc1211a61"},"gpsis":["msisdn-"],"subscribedUeAmbr":{"uplink":"1 Gbps","downlink":"2 Gbps"},"nssai":{"defaultSingleNssais":[{"sst":1.0,"sd":"010203"},{"sst":1.0,"sd":"112233"}]},"ueId":"imsi-208930000000002","servingPlmnId":"20893"}
+

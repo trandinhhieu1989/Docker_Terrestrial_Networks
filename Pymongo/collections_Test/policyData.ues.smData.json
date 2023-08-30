@@ -1,2 +1,0 @@
-{"_id":{"$oid":"64e20c7bded8c03064675e7a"},"smPolicySnssaiData":{"01010203":{"snssai":{"sst":1.0,"sd":"010203"},"smPolicyDnnData":{"internet":{"dnn":"internet"},"internet2":{"dnn":"internet2"}}},"01112233":{"snssai":{"sst":1.0,"sd":"112233"},"smPolicyDnnData":{"internet":{"dnn":"internet"},"internet2":{"dnn":"internet2"}}}},"ueId":"imsi-208930000000003"}
-

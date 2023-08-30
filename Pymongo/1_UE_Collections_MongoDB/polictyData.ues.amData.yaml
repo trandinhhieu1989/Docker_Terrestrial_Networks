@@ -1,0 +1,5 @@
+#
+_id: ObjectId()
+subscCats:
+  - free5gc
+ueId: imsi-208930000000003

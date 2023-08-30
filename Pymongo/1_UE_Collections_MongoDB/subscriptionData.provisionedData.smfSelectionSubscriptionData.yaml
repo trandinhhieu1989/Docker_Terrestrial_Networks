@@ -1,0 +1,13 @@
+_id: ObjectId()
+ueId: imsi-208930000000003
+servingPlmnId: '20893'
+subscribedSnssaiInfos:
+  '01010203':
+    dnnInfos:
+      - dnn: internet
+      - dnn: internet2
+  '01112233':
+    dnnInfos:
+      - dnn: internet
+      - dnn: internet2
+

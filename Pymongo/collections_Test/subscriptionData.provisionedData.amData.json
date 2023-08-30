@@ -1,2 +1,0 @@
-{"_id":{"$oid":"64e20c7bded8c03064675e7c"},"nssai":{"defaultSingleNssais":[{"sd":"010203","sst":1.0},{"sd":"112233","sst":1.0}]},"ueId":"imsi-208930000000003","servingPlmnId":"20893","gpsis":["msisdn-"],"subscribedUeAmbr":{"downlink":"2 Gbps","uplink":"1 Gbps"}}
-

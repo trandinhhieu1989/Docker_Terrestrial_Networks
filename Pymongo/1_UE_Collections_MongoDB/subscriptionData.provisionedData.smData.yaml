@@ -1,0 +1,95 @@
+_id: ObjectId()
+dnnConfigurations:
+  internet:
+    pduSessionTypes:
+      allowedSessionTypes:
+        - IPV4
+      defaultSessionType: IPV4
+    sscModes:
+      defaultSscMode: SSC_MODE_1
+      allowedSscModes:
+        - SSC_MODE_2
+        - SSC_MODE_3
+    5gQosProfile:
+      priorityLevel: 8.0
+      5qi: 9.0
+      arp:
+        priorityLevel: 8.0
+        preemptCap: ''
+        preemptVuln: ''
+    sessionAmbr:
+      uplink: 200 Mbps
+      downlink: 100 Mbps
+  internet2:
+    pduSessionTypes:
+      defaultSessionType: IPV4
+      allowedSessionTypes:
+        - IPV4
+    sscModes:
+      defaultSscMode: SSC_MODE_1
+      allowedSscModes:
+        - SSC_MODE_2
+        - SSC_MODE_3
+    5gQosProfile:
+      5qi: 9.0
+      arp:
+        priorityLevel: 8.0
+        preemptCap: ''
+        preemptVuln: ''
+      priorityLevel: 8.0
+    sessionAmbr:
+      uplink: 200 Mbps
+      downlink: 100 Mbps
+ueId: imsi-208930000000003
+servingPlmnId: '20893'
+singleNssai:
+  sst: 1.0
+  sd: '010203'
+_id: ObjectId()
+dnnConfigurations:
+  internet:
+    pduSessionTypes:
+      defaultSessionType: IPV4
+      allowedSessionTypes:
+        - IPV4
+    sscModes:
+      defaultSscMode: SSC_MODE_1
+      allowedSscModes:
+        - SSC_MODE_2
+        - SSC_MODE_3
+    5gQosProfile:
+      5qi: 9.0
+      arp:
+        priorityLevel: 8.0
+        preemptCap: ''
+        preemptVuln: ''
+      priorityLevel: 8.0
+    sessionAmbr:
+      uplink: 200 Mbps
+      downlink: 100 Mbps
+  internet2:
+    5gQosProfile:
+      5qi: 9.0
+      arp:
+        priorityLevel: 8.0
+        preemptCap: ''
+        preemptVuln: ''
+      priorityLevel: 8.0
+    sessionAmbr:
+      uplink: 200 Mbps
+      downlink: 100 Mbps
+    pduSessionTypes:
+      defaultSessionType: IPV4
+      allowedSessionTypes:
+        - IPV4
+    sscModes:
+      defaultSscMode: SSC_MODE_1
+      allowedSscModes:
+        - SSC_MODE_2
+        - SSC_MODE_3
+ueId: imsi-208930000000003
+servingPlmnId: '20893'
+singleNssai:
+  sst: 1.0
+  sd: '112233'
+
