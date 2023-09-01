@@ -34,13 +34,12 @@ def Add_UE_function(UE_ID,permanentID):
     # polictyData_ues_amData.json data to be inserted into the collections
     Policy_data_am =  {"_id":  ObjectId(), "subscCats": ["free5gc"], "ueId": UE_ID}
     # Insert the data into the collections
-
     res = collection.insert_one(Policy_data_am)
-    print(res.inserted_id)
+    # print(res.inserted_id)
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
     record = collection.find_one()
     # Print the retrieved document
-    print(record)
+    print("policyData.ues.amData",record)
     ###########################################################################
     # Insert a document into a collection polictyData_ues_amData.json referencing the file
     collection1 = db["policyData.ues.smData"]
@@ -67,14 +66,14 @@ def Add_UE_function(UE_ID,permanentID):
         }
     # Insert the data into the collections
     res1 = collection1.insert_one(Policy_data_sm)
-    print(res1.inserted_id)
-
-    # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print(res1.inserted_id)
+    #
+    # # Print the names of all databases on the MongoDB server
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
     record1 = collection1.find_one()
     # Print the retrieved document
-    print(record1)
+    print("policyData.ues.smData",record1)
     ###########################################################################
     collection2 = db["subscriptionData.authenticationData.authenticationStatus"]
     # Json Data
@@ -86,14 +85,14 @@ def Add_UE_function(UE_ID,permanentID):
     # Insert the data into the collections
     res2 = collection2.insert_one(subsData_auth_Status)
     # Print the inserted document's _id
-    print(res2.inserted_id)
-
-    # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print(res2.inserted_id)
+    #
+    # # Print the names of all databases on the MongoDB server
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
     record2 = collection2.find_one()
     # Print the retrieved document
-    print(record2)
+    print("subscriptionData.authenticationData.authenticationStatus",record2)
     ###########################################################################
     #
     collection3 = db["subscriptionData.authenticationData.authenticationSubscription"]
@@ -109,16 +108,16 @@ def Add_UE_function(UE_ID,permanentID):
     # Insert the data into the collections
     res3 = collection3.insert_one(subsData_auth)
     # Print the inserted document's _id
-    print(res3.inserted_id)
-    # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print(res3.inserted_id)
+    # # Print the names of all databases on the MongoDB server
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
     record3 = collection3.find_one()
     # Print the retrieved document
-    print(record3)
+    print("subscriptionData.authenticationData.authenticationSubscription",record3)
     ###########################################################################
 
-    collection4 = db["subscriptionData.authenticationData.authenticationSubscription"]
+    collection4 = db["subscriptionData.contextData.amf3gppAccess"]
     # Json Data
     amf3gpp =  {
             "_id": ObjectId(), "ratType": "", "ueId": UE_ID,
@@ -129,16 +128,16 @@ def Add_UE_function(UE_ID,permanentID):
     # Insert the data into the collections
     res4 = collection4.insert_one(amf3gpp)
     # Print the inserted document's _id
-    print(res4.inserted_id)
+    # print(res4.inserted_id)
 
     # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
     record4 = collection4.find_one()
     # Print the retrieved document
-    print(record4)
+    print("subscriptionData.contextData.amf3gppAccess",record4)
     ###########################################################################
-    collection = db["subscriptionData.provisionedData.amData"]
+    collection5 = db["subscriptionData.provisionedData.amData"]
     # Json Data
     subsData_provision_am =   {
             "_id": ObjectId(),
@@ -150,18 +149,18 @@ def Add_UE_function(UE_ID,permanentID):
             "servingPlmnId": "20893"
         }
     # Insert the data into the collections
-    res5 = collection.insert_one(subsData_provision_am)
+    res5 = collection5.insert_one(subsData_provision_am)
     # Print the inserted document's _id
-    print(res5.inserted_id)
+    # print(res5.inserted_id)
     # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
-    record5 = collection.find_one()
+    record5 = collection5.find_one()
     # Print the retrieved document
-    print(record5)
+    print("subscriptionData.provisionedData.amData",record5)
 
     ###########################################################################
-    collection = db["subscriptionData.provisionedData.smData"]
+    collection6 = db["subscriptionData.provisionedData.smData"]
     # Json Data
     subsData_provision_sm = [
         {
@@ -206,17 +205,17 @@ def Add_UE_function(UE_ID,permanentID):
         }
     ]
     # Insert the data into the collections
-    res6 = collection.insert_many(subsData_provision_sm)
+    res6 = collection6.insert_many(subsData_provision_sm)
     # Print the inserted document's _id
-    print(res6.inserted_ids)
+    # print(res6.inserted_ids)
     # Print the names of all databases on the MongoDB server
-    print("Database Names:", client.list_database_names())
+    # print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
-    record6 = collection.find_one()
+    record6 = collection6.find_one()
     # Print the retrieved document
-    print(record6)
+    print("subscriptionData.provisionedData.smData",record6)
     ###########################################################################
-    collection = db["subscriptionData.provisionedData.smfSelectionSubscriptionData"]
+    collection7 = db["subscriptionData.provisionedData.smfSelectionSubscriptionData"]
     # Json Data
     subsData_provision_smf = {
             "_id": ObjectId(),
@@ -233,13 +232,13 @@ def Add_UE_function(UE_ID,permanentID):
         }
 
     # Insert the data into the collections
-    res7 = collection.insert_one(subsData_provision_smf)
+    res7 = collection7.insert_one(subsData_provision_smf)
     # Print the inserted document's _id
     print(res7.inserted_id)
     # Print the names of all databases on the MongoDB server
     print("Database Names:", client.list_database_names())
     # Step 7: Reading the document that we insert. Retrieve a single document from the collection
-    record7 = collection.find_one()
+    record7 = collection7.find_one()
     # Print the retrieved document
     print(record7)
 

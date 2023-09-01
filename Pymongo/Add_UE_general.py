@@ -6,29 +6,34 @@ from bson import ObjectId
 from datetime import datetime
 from Add_UE_function import Add_UE_function
 from Add_UE_function import check_exist_UE
+from Update_UE_function import Update_UE_function
 
 
 import sys
 
+# UE1_ID = sys.argv[1]
+# UE2_ID = sys.argv[2]
+# permanentID1 = sys.argv[3]
+# permanentID2 = sys.argv[4]
+#
+# print("Argument 1:", UE1_ID)
+# print("Argument 2:", UE2_ID)
+# print("Argument 1:", permanentID1)
+# print("Argument 2:", permanentID2)
 
-UE1_ID = sys.argv[1]
-UE2_ID = sys.argv[2]
-permanentID1 = sys.argv[3]
-permanentID2 = sys.argv[4]
-
-print("Argument 1:", UE1_ID)
-print("Argument 2:", UE2_ID)
-print("Argument 1:", permanentID1)
-print("Argument 2:", permanentID2)
 # Number of UE
 No_UE = 2
-# UE ID
-# UE1_ID  = "imsi-208930000000001"
-# UE2_ID = "imsi-208930000000002"
+
+## UE ID
+UE1_ID  = "imsi-208930000000001"
+UE2_ID = "imsi-208930000000002"
+
 UEID_arr = [UE1_ID,UE2_ID]
-# permanentID
-# permanentID1 = "8baf473f2f8fd09487cccbd7097c6862"
-# permanentID2 = "8baf473f2f8fd09487cccbd7097c6863"
+
+## permanentID
+permanentID1 = "8baf473f2f8fd09487cccbd7097c6862"
+permanentID2 = "8baf473f2f8fd09487cccbd7097c6863"
+
 permanentID_arr = [permanentID1,permanentID2]
 # Generate the current timestamp
 current_timestamp = datetime.now().isoformat()
@@ -36,10 +41,9 @@ current_timestamp = datetime.now().isoformat()
 client = MongoClient("mongodb://localhost:27017")
 # Access a specific database and collection
 db = client["free5gc"]
-# Insert a document into a collection polictyData_ues_amData.json referencing the file
-collection = db["policyData.ues.amData"]
 # print(collection)
 for i in range(1,No_UE+1):
+    collection = db["policyData.ues.amData"]
     document = {}
     # Find the UE_ID and permanentID in UEID_arr and permanentID_arr, respectively
     UE_ID  = UEID_arr[i-1]
@@ -48,9 +52,10 @@ for i in range(1,No_UE+1):
     check_UE_exist = check_exist_UE(collection,UE_ID,i)
     if check_UE_exist:
         print("UE {} exist".format(i))
-        print("Need to Update UE {} information".format(i))
+        print("Update UE {} information".format(i))
         # Update UEi into MongoDB
-        # Update_UE = Update_UE_function(UE_ID, permanent_ID)
+        Update_UE = Update_UE_function(UE_ID, permanent_ID,i)
+        print("We already update the UEs' information into MongoDB")
     else:
         print("Insert UE {} information".format(i))
         # Add UEi into MongoDB
