@@ -36,4 +36,3 @@ python3 /media/hieu/E/Hieu/Dockerfree5gc_github/Pymongo/Add_UE_general.py $imsi_
 
 docker run --privileged --network hieunetwork --ip 172.18.0.14 --name ue_hieu -dit ue:1.0.0  172.18.0.13 $imsi_1 $key_1
 docker run --privileged --network hieunetwork --ip 172.18.0.15 --name ue1_hieu -dit ue:1.0.0 172.18.0.13 $imsi_2 $key_2
-

@@ -5,7 +5,6 @@ In this project, we try to solve many exercises to building a 5G network.
 3. Build all network functions (NFs) in free5gc and UERANSIM using build_NFs.sh.
 4. Run all NFs in free5gc and UERANSIM using run_free5gc.sh and run_ueransim.sh, respectively.
 5. In run_ueransim_input_Config_Yaml.sh, we try to input parameters from config.yaml file into bash file instead of manually input.
-6. In Pymongo folder, I create a script to update all the subscriber registration automatically instead of running manually using webconsole as in step 4 of https://free5gc.org/guide/5-install-ueransim/#3-install-free5gc-webconsole 
-
+6. In Pymongo folder, I create a script to update all the subscriber registration automatically instead of running manually using webconsole as in step 4 of https://free5gc.org/guide/5-install-ueransim/#3-install-free5gc-webconsole
 
 
