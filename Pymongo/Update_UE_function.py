@@ -21,7 +21,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     collection = db["policyData.ues.amData"]
 
     # Find i documents in collection
-    cursor = collection.find({}).limit(i)
+    cursor = collection.find({})
 
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
@@ -58,7 +58,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     # Insert a document into a collection polictyData_ues_amData.json referencing the file
     collection1 = db["policyData.ues.smData"]
     # Find i documents in collection
-    cursor = collection1.find({}).limit(i)
+    cursor = collection1.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
@@ -111,7 +111,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     ###########################################################################
     collection2 = db["subscriptionData.authenticationData.authenticationStatus"]
     # Find i documents in collection
-    cursor = collection2.find({}).limit(i)
+    cursor = collection2.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
@@ -151,7 +151,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     #
     collection3 = db["subscriptionData.authenticationData.authenticationSubscription"]
     # Find i documents in collection
-    cursor = collection3.find({}).limit(i)
+    cursor = collection3.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
@@ -194,7 +194,7 @@ def Update_UE_function(UE_ID,permanentID,i):
 
     collection4 = db["subscriptionData.contextData.amf3gppAccess"]
     # Find i documents in collection
-    cursor = collection4.find({}).limit(i)
+    cursor = collection4.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
@@ -234,7 +234,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     ###########################################################################
     collection5 = db["subscriptionData.provisionedData.amData"]
     # Find i documents in collection
-    cursor = collection5.find({}).limit(i)
+    cursor = collection5.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
@@ -276,13 +276,13 @@ def Update_UE_function(UE_ID,permanentID,i):
     ###########################################################################
     collection6 = db["subscriptionData.provisionedData.smData"]
     # Find i documents in collection
-    cursor = collection6.find({}).limit(i)
+    cursor = collection6.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
     print("All UE Ids", ueids)
     # Define the ObjectId of the document you want to update (replace with your actual ObjectId)
-    target_ue_id = ueids[i - 1]
+    target_ue_id = ueids[2*i - 1]
     print("Target ue Id to update:", target_ue_id)
     filter6 = {"ueId": "target_ue_id"}  # Empty filter matches all documents
     # Json Data
@@ -333,11 +333,21 @@ def Update_UE_function(UE_ID,permanentID,i):
     res61 = collection6.update_one(filter6, update61)
     # Print the updated document in collection
     if i == 1:
-        #  Print the updated document in collection
-        print("subscriptionData.provisionedData.smData :", collection.find_one())
+        # Find two first documents from the collections
+        cursor = collection6.find().limit(2)
+        # Initialize a count variable
+        document_count = 0
+        # Iterate through the cursor to count the documents
+        for document in cursor:
+            document_count += 1
+            # Print the third document
+            print("subscriptionData.provisionedData.smData :", document)
+        # Check if there were any documents in the cursor
+        if document_count == 0:
+            print("No updated document found")
     elif i >= 2:
         # Find all documents in the collection, skip the first two documents, and limit to one document
-        cursor = collection6.find().skip(i - 1).limit(1)
+        cursor = collection6.find().skip(2*i - 2).limit(2)
         # Initialize a count variable
         document_count = 0
         # Iterate through the cursor to count the documents
@@ -351,7 +361,7 @@ def Update_UE_function(UE_ID,permanentID,i):
     ###########################################################################
     collection7 = db["subscriptionData.provisionedData.smfSelectionSubscriptionData"]
     # Find i documents in collection
-    cursor = collection7.find({}).limit(i)
+    cursor = collection7.find({})
     # Iterate through the documents and retrieve the _id field
     ueids = [str(doc["ueId"]) for doc in cursor]
     # Print the list of ObjectId values
